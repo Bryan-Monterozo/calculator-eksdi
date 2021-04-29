@@ -43,11 +43,11 @@ namespace calculator
             this.button_Divide = new System.Windows.Forms.Button();
             this.button_Multiply = new System.Windows.Forms.Button();
             this.button_Subtract = new System.Windows.Forms.Button();
-            this.button_Add = new System.Windows.Forms.Button();
             this.button_Clear_All = new System.Windows.Forms.Button();
             this.button_Clear = new System.Windows.Forms.Button();
             this.button_Equal = new System.Windows.Forms.Button();
-            this.text_Box1 = new System.Windows.Forms.TextBox();
+            this.text_Box_Result = new System.Windows.Forms.TextBox();
+            this.button_Add = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -59,6 +59,7 @@ namespace calculator
             this.button1.TabIndex = 0;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button_Click);
             // 
             // button2
             // 
@@ -69,6 +70,7 @@ namespace calculator
             this.button2.TabIndex = 1;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button_Click);
             // 
             // button3
             // 
@@ -79,6 +81,7 @@ namespace calculator
             this.button3.TabIndex = 2;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button_Click);
             // 
             // button4
             // 
@@ -89,6 +92,7 @@ namespace calculator
             this.button4.TabIndex = 3;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button_Click);
             // 
             // button5
             // 
@@ -99,6 +103,7 @@ namespace calculator
             this.button5.TabIndex = 4;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button_Click);
             // 
             // button6
             // 
@@ -109,6 +114,7 @@ namespace calculator
             this.button6.TabIndex = 5;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button_Click);
             // 
             // button7
             // 
@@ -119,6 +125,7 @@ namespace calculator
             this.button7.TabIndex = 6;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button_Click);
             // 
             // button8
             // 
@@ -129,6 +136,7 @@ namespace calculator
             this.button8.TabIndex = 7;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button_Click);
             // 
             // button9
             // 
@@ -139,6 +147,7 @@ namespace calculator
             this.button9.TabIndex = 8;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button_Click);
             // 
             // button0
             // 
@@ -149,6 +158,7 @@ namespace calculator
             this.button0.TabIndex = 9;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button_Click);
             // 
             // button_Dot
             // 
@@ -159,6 +169,7 @@ namespace calculator
             this.button_Dot.TabIndex = 10;
             this.button_Dot.Text = ".";
             this.button_Dot.UseVisualStyleBackColor = true;
+            this.button_Dot.Click += new System.EventHandler(this.button_Click);
             // 
             // button_Divide
             // 
@@ -169,6 +180,7 @@ namespace calculator
             this.button_Divide.TabIndex = 11;
             this.button_Divide.Text = "/";
             this.button_Divide.UseVisualStyleBackColor = true;
+            this.button_Divide.Click += new System.EventHandler(this.button_Operator_Click);
             // 
             // button_Multiply
             // 
@@ -177,8 +189,9 @@ namespace calculator
             this.button_Multiply.Name = "button_Multiply";
             this.button_Multiply.Size = new System.Drawing.Size(85, 85);
             this.button_Multiply.TabIndex = 12;
-            this.button_Multiply.Text = "X";
+            this.button_Multiply.Text = "x";
             this.button_Multiply.UseVisualStyleBackColor = true;
+            this.button_Multiply.Click += new System.EventHandler(this.button_Operator_Click);
             // 
             // button_Subtract
             // 
@@ -189,17 +202,7 @@ namespace calculator
             this.button_Subtract.TabIndex = 13;
             this.button_Subtract.Text = "-";
             this.button_Subtract.UseVisualStyleBackColor = true;
-            // 
-            // button_Add
-            // 
-            this.button_Add.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Add.Location = new System.Drawing.Point(343, 700);
-            this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(85, 85);
-            this.button_Add.TabIndex = 14;
-            this.button_Add.Text = "+";
-            this.button_Add.UseVisualStyleBackColor = true;
-            this.button_Add.Click += new System.EventHandler(this.button13_Click);
+            this.button_Subtract.Click += new System.EventHandler(this.button_Operator_Click);
             // 
             // button_Clear_All
             // 
@@ -210,6 +213,7 @@ namespace calculator
             this.button_Clear_All.TabIndex = 15;
             this.button_Clear_All.Text = "CE";
             this.button_Clear_All.UseVisualStyleBackColor = true;
+            this.button_Clear_All.Click += new System.EventHandler(this.button_Clear_All_Click);
             // 
             // button_Clear
             // 
@@ -220,6 +224,7 @@ namespace calculator
             this.button_Clear.TabIndex = 16;
             this.button_Clear.Text = "C";
             this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
             // button_Equal
             // 
@@ -230,16 +235,28 @@ namespace calculator
             this.button_Equal.TabIndex = 17;
             this.button_Equal.Text = "=";
             this.button_Equal.UseVisualStyleBackColor = true;
+            this.button_Equal.Click += new System.EventHandler(this.button_Equal_Click);
             // 
-            // text_Box1
+            // text_Box_Result
             // 
-            this.text_Box1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box1.Location = new System.Drawing.Point(22, 292);
-            this.text_Box1.Name = "text_Box1";
-            this.text_Box1.Size = new System.Drawing.Size(511, 64);
-            this.text_Box1.TabIndex = 18;
-            this.text_Box1.Text = "0";
-            this.text_Box1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.text_Box_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Box_Result.Location = new System.Drawing.Point(22, 292);
+            this.text_Box_Result.Name = "text_Box_Result";
+            this.text_Box_Result.Size = new System.Drawing.Size(511, 64);
+            this.text_Box_Result.TabIndex = 18;
+            this.text_Box_Result.Text = "0";
+            this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button_Add
+            // 
+            this.button_Add.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Add.Location = new System.Drawing.Point(343, 700);
+            this.button_Add.Name = "button_Add";
+            this.button_Add.Size = new System.Drawing.Size(85, 85);
+            this.button_Add.TabIndex = 19;
+            this.button_Add.Text = "+";
+            this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Operator_Click);
             // 
             // calc_Main
             // 
@@ -247,11 +264,11 @@ namespace calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(555, 797);
-            this.Controls.Add(this.text_Box1);
+            this.Controls.Add(this.button_Add);
+            this.Controls.Add(this.text_Box_Result);
             this.Controls.Add(this.button_Equal);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.button_Clear_All);
-            this.Controls.Add(this.button_Add);
             this.Controls.Add(this.button_Subtract);
             this.Controls.Add(this.button_Multiply);
             this.Controls.Add(this.button_Divide);
@@ -294,11 +311,11 @@ namespace calculator
         private System.Windows.Forms.Button button_Divide;
         private System.Windows.Forms.Button button_Multiply;
         private System.Windows.Forms.Button button_Subtract;
-        private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Button button_Clear_All;
         private System.Windows.Forms.Button button_Clear;
         private System.Windows.Forms.Button button_Equal;
-        private System.Windows.Forms.TextBox text_Box1;
+        private System.Windows.Forms.TextBox text_Box_Result;
+        private System.Windows.Forms.Button button_Add;
     }
 }
 
