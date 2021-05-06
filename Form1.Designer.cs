@@ -46,8 +46,9 @@ namespace calculator
             this.button_Clear_All = new System.Windows.Forms.Button();
             this.button_Clear = new System.Windows.Forms.Button();
             this.button_Equal = new System.Windows.Forms.Button();
-            this.text_Box_Result = new System.Windows.Forms.TextBox();
+            this.text_Box_Entry = new System.Windows.Forms.TextBox();
             this.button_Add = new System.Windows.Forms.Button();
+            this.text_Box_Result = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -237,15 +238,14 @@ namespace calculator
             this.button_Equal.UseVisualStyleBackColor = true;
             this.button_Equal.Click += new System.EventHandler(this.button_Equal_Click);
             // 
-            // text_Box_Result
+            // text_Box_Entry
             // 
-            this.text_Box_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box_Result.Location = new System.Drawing.Point(22, 292);
-            this.text_Box_Result.Name = "text_Box_Result";
-            this.text_Box_Result.Size = new System.Drawing.Size(511, 64);
-            this.text_Box_Result.TabIndex = 18;
-            this.text_Box_Result.Text = "0";
-            this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.text_Box_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Box_Entry.Location = new System.Drawing.Point(22, 236);
+            this.text_Box_Entry.Name = "text_Box_Entry";
+            this.text_Box_Entry.Size = new System.Drawing.Size(511, 64);
+            this.text_Box_Entry.TabIndex = 18;
+            this.text_Box_Entry.Text = "0";
             // 
             // button_Add
             // 
@@ -258,14 +258,25 @@ namespace calculator
             this.button_Add.UseVisualStyleBackColor = true;
             this.button_Add.Click += new System.EventHandler(this.button_Operator_Click);
             // 
+            // text_Box_Result
+            // 
+            this.text_Box_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Box_Result.Location = new System.Drawing.Point(22, 297);
+            this.text_Box_Result.Name = "text_Box_Result";
+            this.text_Box_Result.Size = new System.Drawing.Size(511, 64);
+            this.text_Box_Result.TabIndex = 20;
+            this.text_Box_Result.Text = "0";
+            this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // calc_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(555, 797);
-            this.Controls.Add(this.button_Add);
             this.Controls.Add(this.text_Box_Result);
+            this.Controls.Add(this.button_Add);
+            this.Controls.Add(this.text_Box_Entry);
             this.Controls.Add(this.button_Equal);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.button_Clear_All);
@@ -314,8 +325,9 @@ namespace calculator
         private System.Windows.Forms.Button button_Clear_All;
         private System.Windows.Forms.Button button_Clear;
         private System.Windows.Forms.Button button_Equal;
-        private System.Windows.Forms.TextBox text_Box_Result;
+        private System.Windows.Forms.TextBox text_Box_Entry;
         private System.Windows.Forms.Button button_Add;
+        private System.Windows.Forms.TextBox text_Box_Result;
     }
 }
 
