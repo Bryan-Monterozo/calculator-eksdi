@@ -1,7 +1,7 @@
 ﻿
 namespace calculator
 {
-    partial class calc_Main
+    public partial class calc_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -190,7 +190,7 @@ namespace calculator
             this.button_Multiply.Name = "button_Multiply";
             this.button_Multiply.Size = new System.Drawing.Size(85, 85);
             this.button_Multiply.TabIndex = 12;
-            this.button_Multiply.Text = "x";
+            this.button_Multiply.Text = "*";
             this.button_Multiply.UseVisualStyleBackColor = true;
             this.button_Multiply.Click += new System.EventHandler(this.button_Operator_Click);
             // 

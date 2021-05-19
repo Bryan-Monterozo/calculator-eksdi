@@ -12,6 +12,9 @@ namespace calculator
 {
     public partial class calc_Main : Form
     {
+
+        //Declared values
+       
         String result = "";
         Double value = 0;
         String operation = "";
@@ -22,14 +25,14 @@ namespace calculator
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             
         }
 
         //buttons
 
-        private void button_Click(object sender, EventArgs e)
+        public void button_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
                 text_Box_Entry.Clear();
@@ -42,13 +45,13 @@ namespace calculator
 
         }
 
-        private void button_Clear_All_Click(object sender, EventArgs e)
+        public void button_Clear_All_Click(object sender, EventArgs e)
         {
             text_Box_Entry.Text = "0";
             result = "0";
         }
 
-        private void button_Clear_Click(object sender, EventArgs e)
+        public void button_Clear_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text.Length >0)
             {
@@ -71,7 +74,7 @@ namespace calculator
             }
         }
 
-        private void button_Operator_Click(object sender, EventArgs e)
+        public void button_Operator_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             operation = b.Text;
@@ -81,8 +84,19 @@ namespace calculator
             result = "";
         }
 
-        private void button_Equal_Click(object sender, EventArgs e)
+        public static Double Evaluate(string expression)
         {
+            DataTable table = new DataTable();
+            table.Columns.Add("expression", string.Empty.GetType(), expression);
+            DataRow row = table.NewRow();
+            table.Rows.Add(row);
+            return Double.Parse((string)row["expression"]);
+        }
+
+        public void button_Equal_Click(object sender, EventArgs e)
+        {
+            text_Box_Result.Text = Evaluate(text_Box_Entry.Text).ToString();
+/* TESTING
 
             switch(operation)
             {
@@ -93,7 +107,7 @@ namespace calculator
                 case "-":
                     text_Box_Result.Text = (value - Double.Parse(result)).ToString();
                     break;
-                case "x":
+                case "*":
                     text_Box_Result.Text = (value * Double.Parse(result)).ToString();
                     break;
                 case "/":
@@ -103,7 +117,9 @@ namespace calculator
                     break;
 
             }// END SWITCH
+*/
 
+               
         }
 
     }
