@@ -49,6 +49,8 @@ namespace calculator
             this.text_Box_Entry = new System.Windows.Forms.TextBox();
             this.button_Add = new System.Windows.Forms.Button();
             this.text_Box_Result = new System.Windows.Forms.TextBox();
+            this.button_L_Par = new System.Windows.Forms.Button();
+            this.button_R_Par = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -207,12 +209,13 @@ namespace calculator
             // 
             // button_Clear_All
             // 
-            this.button_Clear_All.Font = new System.Drawing.Font("Segoe UI Black", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Clear_All.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold);
             this.button_Clear_All.Location = new System.Drawing.Point(448, 377);
             this.button_Clear_All.Name = "button_Clear_All";
             this.button_Clear_All.Size = new System.Drawing.Size(85, 85);
             this.button_Clear_All.TabIndex = 15;
             this.button_Clear_All.Text = "CE";
+            this.button_Clear_All.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Clear_All.UseVisualStyleBackColor = true;
             this.button_Clear_All.Click += new System.EventHandler(this.button_Clear_All_Click);
             // 
@@ -241,7 +244,7 @@ namespace calculator
             // text_Box_Entry
             // 
             this.text_Box_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box_Entry.Location = new System.Drawing.Point(22, 236);
+            this.text_Box_Entry.Location = new System.Drawing.Point(22, 123);
             this.text_Box_Entry.Name = "text_Box_Entry";
             this.text_Box_Entry.Size = new System.Drawing.Size(511, 64);
             this.text_Box_Entry.TabIndex = 18;
@@ -261,12 +264,35 @@ namespace calculator
             // text_Box_Result
             // 
             this.text_Box_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box_Result.Location = new System.Drawing.Point(22, 297);
+            this.text_Box_Result.Location = new System.Drawing.Point(22, 184);
             this.text_Box_Result.Name = "text_Box_Result";
+            this.text_Box_Result.ReadOnly = true;
             this.text_Box_Result.Size = new System.Drawing.Size(511, 64);
             this.text_Box_Result.TabIndex = 20;
             this.text_Box_Result.Text = "0";
             this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button_L_Par
+            // 
+            this.button_L_Par.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_L_Par.Location = new System.Drawing.Point(22, 267);
+            this.button_L_Par.Name = "button_L_Par";
+            this.button_L_Par.Size = new System.Drawing.Size(85, 85);
+            this.button_L_Par.TabIndex = 21;
+            this.button_L_Par.Text = "(";
+            this.button_L_Par.UseVisualStyleBackColor = true;
+            this.button_L_Par.Click += new System.EventHandler(this.button_L_Par_Click);
+            // 
+            // button_R_Par
+            // 
+            this.button_R_Par.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_R_Par.Location = new System.Drawing.Point(129, 267);
+            this.button_R_Par.Name = "button_R_Par";
+            this.button_R_Par.Size = new System.Drawing.Size(85, 85);
+            this.button_R_Par.TabIndex = 22;
+            this.button_R_Par.Text = ")";
+            this.button_R_Par.UseVisualStyleBackColor = true;
+            this.button_R_Par.Click += new System.EventHandler(this.button_R_Par_Click);
             // 
             // calc_Main
             // 
@@ -274,6 +300,8 @@ namespace calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(555, 797);
+            this.Controls.Add(this.button_R_Par);
+            this.Controls.Add(this.button_L_Par);
             this.Controls.Add(this.text_Box_Result);
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.text_Box_Entry);
@@ -328,6 +356,8 @@ namespace calculator
         private System.Windows.Forms.TextBox text_Box_Entry;
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.TextBox text_Box_Result;
+        private System.Windows.Forms.Button button_L_Par;
+        private System.Windows.Forms.Button button_R_Par;
     }
 }
 
