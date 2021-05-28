@@ -51,6 +51,8 @@ namespace calculator
             this.text_Box_Result = new System.Windows.Forms.TextBox();
             this.button_L_Par = new System.Windows.Forms.Button();
             this.button_R_Par = new System.Windows.Forms.Button();
+            this.button_Pi = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -294,12 +296,36 @@ namespace calculator
             this.button_R_Par.UseVisualStyleBackColor = true;
             this.button_R_Par.Click += new System.EventHandler(this.button_R_Par_Click);
             // 
+            // button_Pi
+            // 
+            this.button_Pi.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Pi.Location = new System.Drawing.Point(238, 267);
+            this.button_Pi.Name = "button_Pi";
+            this.button_Pi.Size = new System.Drawing.Size(85, 85);
+            this.button_Pi.TabIndex = 23;
+            this.button_Pi.Text = "π";
+            this.button_Pi.UseVisualStyleBackColor = true;
+            this.button_Pi.Click += new System.EventHandler(this.button_Pi_Click);
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(343, 267);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(85, 85);
+            this.button10.TabIndex = 24;
+            this.button10.Text = "%";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button_Operator_Click);
+            // 
             // calc_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(555, 797);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button_Pi);
             this.Controls.Add(this.button_R_Par);
             this.Controls.Add(this.button_L_Par);
             this.Controls.Add(this.text_Box_Result);
@@ -358,6 +384,8 @@ namespace calculator
         private System.Windows.Forms.TextBox text_Box_Result;
         private System.Windows.Forms.Button button_L_Par;
         private System.Windows.Forms.Button button_R_Par;
+        private System.Windows.Forms.Button button_Pi;
+        private System.Windows.Forms.Button button10;
     }
 }
 

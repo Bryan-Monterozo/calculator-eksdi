@@ -17,10 +17,11 @@ namespace calculator
        
         //String result = "";
         String operation = "";
-        Boolean operation_Status = false;
-        Boolean par_StatusL = false;
-        Boolean par_StatusR = false;
-
+        bool operation_Status;
+        //bool par_StatusL = false;
+        //bool par_StatusR = false;
+        bool par_TokenL;
+        bool par_TokenR;
 
         public calc_Main()
         {
@@ -37,16 +38,28 @@ namespace calculator
         public void button_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
+            {
                 text_Box_Entry.Clear();
+            }
 
-
-            Button b = (Button)sender;
-            text_Box_Entry.Text = text_Box_Entry.Text + b.Text;
+            if (par_TokenR == true)
+            {
+                Button b = (Button)sender;
+                text_Box_Entry.Text = text_Box_Entry.Text + "*" + b.Text;
+            }
+            
+            if (par_TokenR == false)
+            {
+                Button b = (Button)sender;
+                text_Box_Entry.Text = text_Box_Entry.Text + b.Text;
+            }
+            
             //result = result + b.Text;
 
             operation_Status = false;
-            par_StatusL = true;
-            par_StatusR = false;
+            par_TokenL = true;
+            //par_StatusL = true;
+            //par_StatusR = false;
         }
 
         public void button_Clear_All_Click(object sender, EventArgs e)
@@ -55,6 +68,8 @@ namespace calculator
             text_Box_Result.Text = "0";
             //result = "0";
             operation_Status = false;
+            par_TokenL = false;
+            par_TokenR = false;
         }
 
         public void button_Clear_Click(object sender, EventArgs e)
@@ -70,20 +85,24 @@ namespace calculator
                 text_Box_Entry.Text = "0";
                 operation_Status = false;
             }
-/*
-            if (result.Length > 0)
-            {
-                result = result.Remove(result.Length - 1, 1);
-                operation_Status = false;
-            }
+            operation_Status = false;
+            par_TokenL = false;
+            par_TokenR = false;
 
-            if (result == "")
-            {
-                result = "0";
-                operation_Status = false;
+            /* 
+                        if (result.Length > 0)
+                        {
+                            result = result.Remove(result.Length - 1, 1);
+                            operation_Status = false;
+                        }
 
-            }
-*/            
+                        if (result == "")
+                        {
+                            result = "0";
+                            operation_Status = false;
+
+                        }
+            */
         }
 
         public void button_Operator_Click(object sender, EventArgs e)
@@ -94,36 +113,86 @@ namespace calculator
                 operation = b.Text;
                 text_Box_Entry.Text = text_Box_Entry.Text + operation;
                 operation_Status = true;
-                par_StatusL = false;
+                //par_StatusL = false;
             }
+            par_TokenL = false;
+            par_TokenR = false;
             
         }
+
         private void button_L_Par_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
+            {
                 text_Box_Entry.Clear();
+            }
 
-            if (par_StatusL == false)
+            if (par_TokenL == false)
+            {
+                Button b = (Button)sender;
+                operation = b.Text;
+                text_Box_Entry.Text = text_Box_Entry.Text + operation;
+            }
+
+            if (par_TokenL == true)
+            {
+                Button b = (Button)sender;
+                operation = b.Text;
+                text_Box_Entry.Text = text_Box_Entry.Text + "*" + operation;
+                par_TokenL = false;
+            }
+            /*if (par_StatusL == false)
             {
                 Button b = (Button)sender;
                 operation = b.Text;
                 text_Box_Entry.Text = text_Box_Entry.Text + operation;
                 par_StatusL = true;
-            }
+            }*/
+            par_TokenR = false;
         }
 
         private void button_R_Par_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
+            {
                 text_Box_Entry.Clear();
+            }
 
-            if (par_StatusR == false)
+            Button b = (Button)sender;
+            operation = b.Text;
+            text_Box_Entry.Text = text_Box_Entry.Text + operation;
+
+            par_TokenL = true;
+            par_TokenR = true;
+
+            /*if (par_StatusR == false)
             {
                 Button b = (Button)sender;
                 operation = b.Text;
                 text_Box_Entry.Text = text_Box_Entry.Text + operation;
                 par_StatusR = true;
+            }*/
+        }
+
+        private void button_Pi_Click(object sender, EventArgs e)
+        {
+            if (text_Box_Entry.Text == "0")
+            {
+                text_Box_Entry.Clear();
             }
+            if (par_TokenL == false)
+            {
+                text_Box_Entry.Text = text_Box_Entry.Text + "(3.14159)";
+                operation_Status = false;
+
+            }
+            if (par_TokenL == true)
+            {
+                text_Box_Entry.Text = text_Box_Entry.Text + "*" + "(3.14159)";
+                operation_Status = false;
+            }
+            par_TokenL = true;
+            par_TokenR = true;
         }
 
         //For Evaluating Strings as expression
