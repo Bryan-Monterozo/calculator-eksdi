@@ -14,9 +14,11 @@ namespace calculator
     {
 
         //Declared values
-       
+
         //String result = "";
         String operation = "";
+        byte point_Token = 0;
+        bool pointEnable = true;
         bool operation_Status;
         //bool par_StatusL = false;
         //bool par_StatusR = false;
@@ -30,12 +32,11 @@ namespace calculator
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         //buttons
-
-        public void button_Click(object sender, EventArgs e)
+        public void button_Num_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
             {
@@ -46,12 +47,20 @@ namespace calculator
             {
                 Button b = (Button)sender;
                 text_Box_Entry.Text = text_Box_Entry.Text + "*" + b.Text;
+                if (pointEnable == false)
+                {
+                    point_Token++;
+                }
             }
             
             if (par_TokenR == false)
             {
                 Button b = (Button)sender;
                 text_Box_Entry.Text = text_Box_Entry.Text + b.Text;
+                if (pointEnable == false)
+                {
+                    point_Token++;
+                }
             }
             
             //result = result + b.Text;
@@ -62,6 +71,39 @@ namespace calculator
             //par_StatusR = false;
         }
 
+        public void button_Dot_Click(object sender, EventArgs e)
+        {
+            if (pointEnable == true)
+            {
+                if (text_Box_Entry.Text == "0")
+                {
+                    text_Box_Entry.Clear();
+                }
+
+                if (par_TokenR == true)
+                {
+                    Button b = (Button)sender;
+                    if (point_Token == 0)
+                    {
+                        text_Box_Entry.Text = text_Box_Entry.Text + "*" + b.Text;
+                        pointEnable = false;
+                        point_Token++;
+                    }
+                }
+
+                if (par_TokenR == false)
+                {
+                    Button b = (Button)sender;
+                    if (point_Token == 0)
+                    {
+                        text_Box_Entry.Text = text_Box_Entry.Text + b.Text;
+                        pointEnable = false;
+                        point_Token++;
+                    }
+                }
+            }
+        }
+
         public void button_Clear_All_Click(object sender, EventArgs e)
         {
             text_Box_Entry.Text = "0";
@@ -70,41 +112,35 @@ namespace calculator
             operation_Status = false;
             par_TokenL = false;
             par_TokenR = false;
+            point_Token = 0;
+            pointEnable = true;
         }
 
         public void button_Clear_Click(object sender, EventArgs e)
         {
-            if (text_Box_Entry.Text.Length >0)
+            if (text_Box_Entry.Text.Length > 0)
             {
                 text_Box_Entry.Text = text_Box_Entry.Text.Remove(text_Box_Entry.Text.Length - 1, 1);
-                operation_Status = false;
             }
 
             if (text_Box_Entry.Text == "") 
             {
                 text_Box_Entry.Text = "0";
-                operation_Status = false;
+            }
+
+            if (point_Token == 1)
+            {
+                pointEnable = true;
+            }
+            
+            if (point_Token != 0)
+            {
+                point_Token--;
             }
             operation_Status = false;
             par_TokenL = false;
             par_TokenR = false;
-
-            /* 
-                        if (result.Length > 0)
-                        {
-                            result = result.Remove(result.Length - 1, 1);
-                            operation_Status = false;
-                        }
-
-                        if (result == "")
-                        {
-                            result = "0";
-                            operation_Status = false;
-
-                        }
-            */
         }
-
         public void button_Operator_Click(object sender, EventArgs e)
         {
             if (operation_Status == false)
@@ -117,10 +153,12 @@ namespace calculator
             }
             par_TokenL = false;
             par_TokenR = false;
+            pointEnable = true;
+            point_Token = 0;
             
         }
 
-        private void button_L_Par_Click(object sender, EventArgs e)
+        public void button_L_Par_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
             {
@@ -151,7 +189,7 @@ namespace calculator
             par_TokenR = false;
         }
 
-        private void button_R_Par_Click(object sender, EventArgs e)
+        public void button_R_Par_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
             {
@@ -174,7 +212,7 @@ namespace calculator
             }*/
         }
 
-        private void button_Pi_Click(object sender, EventArgs e)
+        public void button_Pi_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
             {
@@ -194,7 +232,7 @@ namespace calculator
             par_TokenL = true;
             par_TokenR = true;
         }
-
+        
         //For Evaluating Strings as expression
         public static Double Evaluate(string expression)
         {
@@ -217,35 +255,6 @@ namespace calculator
             {
                 text_Box_Result.Text = "SYNTAX Error";
             }
-            
-          
-
-
-/* TESTING
-
-            switch(operation)
-            {
-                case "+":
-                    text_Box_Result.Text = (value + Double.Parse(result)).ToString();
-                    break;
-
-                case "-":
-                    text_Box_Result.Text = (value - Double.Parse(result)).ToString();
-                    break;
-                case "*":
-                    text_Box_Result.Text = (value * Double.Parse(result)).ToString();
-                    break;
-                case "/":
-                    text_Box_Result.Text = (value / Double.Parse(result)).ToString();
-                    break;
-                default:
-                    break;
-
-            }// END SWITCH
-*/
-
-               
         }
-
     }
 }
