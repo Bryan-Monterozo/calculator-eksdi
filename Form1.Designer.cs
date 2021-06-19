@@ -53,12 +53,19 @@ namespace calculator
             this.button_R_Par = new System.Windows.Forms.Button();
             this.button_Pi = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button_MC = new System.Windows.Forms.Button();
+            this.button_MR = new System.Windows.Forms.Button();
+            this.button_MAdd = new System.Windows.Forms.Button();
+            this.button_MSub = new System.Windows.Forms.Button();
+            this.button_MS = new System.Windows.Forms.Button();
+            this.button_M = new System.Windows.Forms.Button();
+            this.button_Base10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 592);
+            this.button1.Location = new System.Drawing.Point(22, 609);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 0;
@@ -69,7 +76,7 @@ namespace calculator
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(129, 592);
+            this.button2.Location = new System.Drawing.Point(113, 609);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 85);
             this.button2.TabIndex = 1;
@@ -80,7 +87,7 @@ namespace calculator
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(238, 592);
+            this.button3.Location = new System.Drawing.Point(204, 609);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 85);
             this.button3.TabIndex = 2;
@@ -91,7 +98,7 @@ namespace calculator
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(22, 485);
+            this.button4.Location = new System.Drawing.Point(22, 518);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 85);
             this.button4.TabIndex = 3;
@@ -102,7 +109,7 @@ namespace calculator
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(129, 485);
+            this.button5.Location = new System.Drawing.Point(113, 518);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 85);
             this.button5.TabIndex = 4;
@@ -113,7 +120,7 @@ namespace calculator
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(238, 485);
+            this.button6.Location = new System.Drawing.Point(204, 518);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 85);
             this.button6.TabIndex = 5;
@@ -124,7 +131,7 @@ namespace calculator
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(22, 377);
+            this.button7.Location = new System.Drawing.Point(22, 427);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(85, 85);
             this.button7.TabIndex = 6;
@@ -135,7 +142,7 @@ namespace calculator
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(129, 377);
+            this.button8.Location = new System.Drawing.Point(113, 427);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(85, 85);
             this.button8.TabIndex = 7;
@@ -146,7 +153,7 @@ namespace calculator
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(238, 377);
+            this.button9.Location = new System.Drawing.Point(204, 427);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 85);
             this.button9.TabIndex = 8;
@@ -159,7 +166,7 @@ namespace calculator
             this.button0.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button0.Location = new System.Drawing.Point(22, 700);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(192, 85);
+            this.button0.Size = new System.Drawing.Size(176, 85);
             this.button0.TabIndex = 9;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -168,7 +175,7 @@ namespace calculator
             // button_Dot
             // 
             this.button_Dot.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Dot.Location = new System.Drawing.Point(238, 700);
+            this.button_Dot.Location = new System.Drawing.Point(204, 700);
             this.button_Dot.Name = "button_Dot";
             this.button_Dot.Size = new System.Drawing.Size(85, 85);
             this.button_Dot.TabIndex = 10;
@@ -179,7 +186,7 @@ namespace calculator
             // button_Divide
             // 
             this.button_Divide.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Divide.Location = new System.Drawing.Point(343, 377);
+            this.button_Divide.Location = new System.Drawing.Point(295, 427);
             this.button_Divide.Name = "button_Divide";
             this.button_Divide.Size = new System.Drawing.Size(85, 85);
             this.button_Divide.TabIndex = 11;
@@ -190,7 +197,7 @@ namespace calculator
             // button_Multiply
             // 
             this.button_Multiply.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Multiply.Location = new System.Drawing.Point(343, 485);
+            this.button_Multiply.Location = new System.Drawing.Point(295, 518);
             this.button_Multiply.Name = "button_Multiply";
             this.button_Multiply.Size = new System.Drawing.Size(85, 85);
             this.button_Multiply.TabIndex = 12;
@@ -201,7 +208,7 @@ namespace calculator
             // button_Subtract
             // 
             this.button_Subtract.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Subtract.Location = new System.Drawing.Point(343, 592);
+            this.button_Subtract.Location = new System.Drawing.Point(295, 609);
             this.button_Subtract.Name = "button_Subtract";
             this.button_Subtract.Size = new System.Drawing.Size(85, 85);
             this.button_Subtract.TabIndex = 13;
@@ -212,19 +219,18 @@ namespace calculator
             // button_Clear_All
             // 
             this.button_Clear_All.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold);
-            this.button_Clear_All.Location = new System.Drawing.Point(448, 377);
+            this.button_Clear_All.Location = new System.Drawing.Point(386, 427);
             this.button_Clear_All.Name = "button_Clear_All";
             this.button_Clear_All.Size = new System.Drawing.Size(85, 85);
             this.button_Clear_All.TabIndex = 15;
             this.button_Clear_All.Text = "CE";
-            this.button_Clear_All.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Clear_All.UseVisualStyleBackColor = true;
             this.button_Clear_All.Click += new System.EventHandler(this.button_Clear_All_Click);
             // 
             // button_Clear
             // 
             this.button_Clear.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Clear.Location = new System.Drawing.Point(448, 485);
+            this.button_Clear.Location = new System.Drawing.Point(386, 518);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(85, 85);
             this.button_Clear.TabIndex = 16;
@@ -235,9 +241,9 @@ namespace calculator
             // button_Equal
             // 
             this.button_Equal.Font = new System.Drawing.Font("Segoe UI Black", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Equal.Location = new System.Drawing.Point(448, 592);
+            this.button_Equal.Location = new System.Drawing.Point(386, 609);
             this.button_Equal.Name = "button_Equal";
-            this.button_Equal.Size = new System.Drawing.Size(85, 193);
+            this.button_Equal.Size = new System.Drawing.Size(85, 176);
             this.button_Equal.TabIndex = 17;
             this.button_Equal.Text = "=";
             this.button_Equal.UseVisualStyleBackColor = true;
@@ -246,16 +252,16 @@ namespace calculator
             // text_Box_Entry
             // 
             this.text_Box_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box_Entry.Location = new System.Drawing.Point(22, 63);
+            this.text_Box_Entry.Location = new System.Drawing.Point(22, 147);
             this.text_Box_Entry.Name = "text_Box_Entry";
-            this.text_Box_Entry.Size = new System.Drawing.Size(511, 64);
+            this.text_Box_Entry.Size = new System.Drawing.Size(449, 64);
             this.text_Box_Entry.TabIndex = 18;
             this.text_Box_Entry.Text = "0";
             // 
             // button_Add
             // 
             this.button_Add.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Add.Location = new System.Drawing.Point(343, 700);
+            this.button_Add.Location = new System.Drawing.Point(295, 700);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(85, 85);
             this.button_Add.TabIndex = 19;
@@ -266,10 +272,10 @@ namespace calculator
             // text_Box_Result
             // 
             this.text_Box_Result.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Box_Result.Location = new System.Drawing.Point(22, 124);
+            this.text_Box_Result.Location = new System.Drawing.Point(22, 208);
             this.text_Box_Result.Name = "text_Box_Result";
             this.text_Box_Result.ReadOnly = true;
-            this.text_Box_Result.Size = new System.Drawing.Size(511, 64);
+            this.text_Box_Result.Size = new System.Drawing.Size(449, 64);
             this.text_Box_Result.TabIndex = 20;
             this.text_Box_Result.Text = "0";
             this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -277,7 +283,7 @@ namespace calculator
             // button_L_Par
             // 
             this.button_L_Par.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_L_Par.Location = new System.Drawing.Point(22, 267);
+            this.button_L_Par.Location = new System.Drawing.Point(22, 336);
             this.button_L_Par.Name = "button_L_Par";
             this.button_L_Par.Size = new System.Drawing.Size(85, 85);
             this.button_L_Par.TabIndex = 21;
@@ -288,7 +294,7 @@ namespace calculator
             // button_R_Par
             // 
             this.button_R_Par.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_R_Par.Location = new System.Drawing.Point(129, 267);
+            this.button_R_Par.Location = new System.Drawing.Point(113, 336);
             this.button_R_Par.Name = "button_R_Par";
             this.button_R_Par.Size = new System.Drawing.Size(85, 85);
             this.button_R_Par.TabIndex = 22;
@@ -299,7 +305,7 @@ namespace calculator
             // button_Pi
             // 
             this.button_Pi.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Pi.Location = new System.Drawing.Point(238, 267);
+            this.button_Pi.Location = new System.Drawing.Point(204, 336);
             this.button_Pi.Name = "button_Pi";
             this.button_Pi.Size = new System.Drawing.Size(85, 85);
             this.button_Pi.TabIndex = 23;
@@ -310,7 +316,7 @@ namespace calculator
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(343, 267);
+            this.button10.Location = new System.Drawing.Point(295, 336);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(85, 85);
             this.button10.TabIndex = 24;
@@ -318,12 +324,93 @@ namespace calculator
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button_Operator_Click);
             // 
+            // button_MC
+            // 
+            this.button_MC.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_MC.Location = new System.Drawing.Point(22, 290);
+            this.button_MC.Name = "button_MC";
+            this.button_MC.Size = new System.Drawing.Size(85, 40);
+            this.button_MC.TabIndex = 25;
+            this.button_MC.Text = "MC";
+            this.button_MC.UseVisualStyleBackColor = true;
+            this.button_MC.Click += new System.EventHandler(this.button_MC_Click);
+            // 
+            // button_MR
+            // 
+            this.button_MR.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_MR.Location = new System.Drawing.Point(113, 290);
+            this.button_MR.Name = "button_MR";
+            this.button_MR.Size = new System.Drawing.Size(85, 40);
+            this.button_MR.TabIndex = 26;
+            this.button_MR.Text = "MR";
+            this.button_MR.UseVisualStyleBackColor = true;
+            this.button_MR.Click += new System.EventHandler(this.button_MR_Click);
+            // 
+            // button_MAdd
+            // 
+            this.button_MAdd.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_MAdd.Location = new System.Drawing.Point(204, 290);
+            this.button_MAdd.Name = "button_MAdd";
+            this.button_MAdd.Size = new System.Drawing.Size(85, 40);
+            this.button_MAdd.TabIndex = 27;
+            this.button_MAdd.Text = "M+";
+            this.button_MAdd.UseVisualStyleBackColor = true;
+            // 
+            // button_MSub
+            // 
+            this.button_MSub.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_MSub.Location = new System.Drawing.Point(295, 290);
+            this.button_MSub.Name = "button_MSub";
+            this.button_MSub.Size = new System.Drawing.Size(85, 40);
+            this.button_MSub.TabIndex = 28;
+            this.button_MSub.Text = "M-";
+            this.button_MSub.UseVisualStyleBackColor = true;
+            // 
+            // button_MS
+            // 
+            this.button_MS.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_MS.Location = new System.Drawing.Point(386, 290);
+            this.button_MS.Name = "button_MS";
+            this.button_MS.Size = new System.Drawing.Size(85, 40);
+            this.button_MS.TabIndex = 29;
+            this.button_MS.Text = "MS";
+            this.button_MS.UseVisualStyleBackColor = true;
+            this.button_MS.Click += new System.EventHandler(this.button_MS_Click);
+            // 
+            // button_M
+            // 
+            this.button_M.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_M.Location = new System.Drawing.Point(386, 336);
+            this.button_M.Name = "button_M";
+            this.button_M.Size = new System.Drawing.Size(85, 40);
+            this.button_M.TabIndex = 30;
+            this.button_M.Text = "M";
+            this.button_M.UseVisualStyleBackColor = true;
+            // 
+            // button_Base10
+            // 
+            this.button_Base10.Font = new System.Drawing.Font("Segoe UI Black", 15F);
+            this.button_Base10.Location = new System.Drawing.Point(386, 381);
+            this.button_Base10.Name = "button_Base10";
+            this.button_Base10.Size = new System.Drawing.Size(85, 40);
+            this.button_Base10.TabIndex = 31;
+            this.button_Base10.Text = "E";
+            this.button_Base10.UseVisualStyleBackColor = true;
+            this.button_Base10.Click += new System.EventHandler(this.button_Num_Click);
+            // 
             // calc_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(555, 797);
+            this.ClientSize = new System.Drawing.Size(492, 797);
+            this.Controls.Add(this.button_Base10);
+            this.Controls.Add(this.button_M);
+            this.Controls.Add(this.button_MS);
+            this.Controls.Add(this.button_MSub);
+            this.Controls.Add(this.button_MAdd);
+            this.Controls.Add(this.button_MR);
+            this.Controls.Add(this.button_MC);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button_Pi);
             this.Controls.Add(this.button_R_Par);
@@ -349,8 +436,8 @@ namespace calculator
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(573, 844);
-            this.MinimumSize = new System.Drawing.Size(573, 844);
+            this.MaximumSize = new System.Drawing.Size(510, 844);
+            this.MinimumSize = new System.Drawing.Size(510, 844);
             this.Name = "calc_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CALCULATOR-EKSDI";
@@ -386,6 +473,13 @@ namespace calculator
         private System.Windows.Forms.Button button_R_Par;
         private System.Windows.Forms.Button button_Pi;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button_MC;
+        private System.Windows.Forms.Button button_MR;
+        private System.Windows.Forms.Button button_MAdd;
+        private System.Windows.Forms.Button button_MSub;
+        private System.Windows.Forms.Button button_MS;
+        private System.Windows.Forms.Button button_M;
+        private System.Windows.Forms.Button button_Base10;
     }
 }
 

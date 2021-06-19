@@ -14,8 +14,6 @@ namespace calculator
     {
 
         //Declared values
-
-        //String result = "";
         String operation = "";
         byte point_Token = 0;
         bool pointEnable = true;
@@ -24,6 +22,8 @@ namespace calculator
         //bool par_StatusR = false;
         bool par_TokenL;
         bool par_TokenR;
+        bool mem_Recall = true;
+        double memory = 0;
 
         public calc_Main()
         {
@@ -114,6 +114,7 @@ namespace calculator
             par_TokenR = false;
             point_Token = 0;
             pointEnable = true;
+            mem_Recall = true;
         }
 
         public void button_Clear_Click(object sender, EventArgs e)
@@ -140,6 +141,7 @@ namespace calculator
             operation_Status = false;
             par_TokenL = false;
             par_TokenR = false;
+            mem_Recall = true;
         }
         public void button_Operator_Click(object sender, EventArgs e)
         {
@@ -155,7 +157,7 @@ namespace calculator
             par_TokenR = false;
             pointEnable = true;
             point_Token = 0;
-            
+            mem_Recall = true;
         }
 
         public void button_L_Par_Click(object sender, EventArgs e)
@@ -255,6 +257,44 @@ namespace calculator
             {
                 text_Box_Result.Text = "SYNTAX Error";
             }
+        }
+
+        //MEMORY MANIPULATION
+        private void button_MC_Click(object sender, EventArgs e)
+        {
+            memory = 0;
+        }
+
+        private void button_MR_Click(object sender, EventArgs e)
+        {
+            if (text_Box_Entry.Text == "0")
+            {
+                text_Box_Entry.Clear();
+            }
+
+            if (mem_Recall == true)
+            {
+                if (par_TokenR == true)
+                {
+                    Button b = (Button)sender;
+                    text_Box_Entry.Text = text_Box_Entry.Text + "*" + memory.ToString();
+                }
+
+                if (par_TokenR == false)
+                {
+                    Button b = (Button)sender;
+                    text_Box_Entry.Text = text_Box_Entry.Text + memory.ToString();
+                }
+                if (text_Box_Entry.Text != "0")
+                {
+                    mem_Recall = false;
+                }
+            }
+        }
+
+        private void button_MS_Click(object sender, EventArgs e)
+        {
+            memory = double.Parse(text_Box_Result.Text);
         }
     }
 }
