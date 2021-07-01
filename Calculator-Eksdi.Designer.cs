@@ -60,6 +60,7 @@ namespace calculator
             this.button_MS = new System.Windows.Forms.Button();
             this.button_M = new System.Windows.Forms.Button();
             this.button_Base10 = new System.Windows.Forms.Button();
+            this.listBox_Mem = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -254,9 +255,11 @@ namespace calculator
             this.text_Box_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_Box_Entry.Location = new System.Drawing.Point(22, 147);
             this.text_Box_Entry.Name = "text_Box_Entry";
+            this.text_Box_Entry.ReadOnly = true;
             this.text_Box_Entry.Size = new System.Drawing.Size(449, 64);
             this.text_Box_Entry.TabIndex = 18;
             this.text_Box_Entry.Text = "0";
+            this.text_Box_Entry.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_Box_Entry_MouseClick);
             // 
             // button_Add
             // 
@@ -279,6 +282,7 @@ namespace calculator
             this.text_Box_Result.TabIndex = 20;
             this.text_Box_Result.Text = "0";
             this.text_Box_Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.text_Box_Result.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_Box_Result_MouseClick);
             // 
             // button_L_Par
             // 
@@ -326,6 +330,7 @@ namespace calculator
             // 
             // button_MC
             // 
+            this.button_MC.Enabled = false;
             this.button_MC.Font = new System.Drawing.Font("Segoe UI Black", 15F);
             this.button_MC.Location = new System.Drawing.Point(22, 290);
             this.button_MC.Name = "button_MC";
@@ -337,6 +342,7 @@ namespace calculator
             // 
             // button_MR
             // 
+            this.button_MR.Enabled = false;
             this.button_MR.Font = new System.Drawing.Font("Segoe UI Black", 15F);
             this.button_MR.Location = new System.Drawing.Point(113, 290);
             this.button_MR.Name = "button_MR";
@@ -348,6 +354,7 @@ namespace calculator
             // 
             // button_MAdd
             // 
+            this.button_MAdd.Enabled = false;
             this.button_MAdd.Font = new System.Drawing.Font("Segoe UI Black", 15F);
             this.button_MAdd.Location = new System.Drawing.Point(204, 290);
             this.button_MAdd.Name = "button_MAdd";
@@ -355,9 +362,11 @@ namespace calculator
             this.button_MAdd.TabIndex = 27;
             this.button_MAdd.Text = "M+";
             this.button_MAdd.UseVisualStyleBackColor = true;
+            this.button_MAdd.Click += new System.EventHandler(this.button_MAdd_Click);
             // 
             // button_MSub
             // 
+            this.button_MSub.Enabled = false;
             this.button_MSub.Font = new System.Drawing.Font("Segoe UI Black", 15F);
             this.button_MSub.Location = new System.Drawing.Point(295, 290);
             this.button_MSub.Name = "button_MSub";
@@ -365,6 +374,7 @@ namespace calculator
             this.button_MSub.TabIndex = 28;
             this.button_MSub.Text = "M-";
             this.button_MSub.UseVisualStyleBackColor = true;
+            this.button_MSub.Click += new System.EventHandler(this.button_MSub_Click);
             // 
             // button_MS
             // 
@@ -379,6 +389,7 @@ namespace calculator
             // 
             // button_M
             // 
+            this.button_M.Enabled = false;
             this.button_M.Font = new System.Drawing.Font("Segoe UI Black", 15F);
             this.button_M.Location = new System.Drawing.Point(386, 336);
             this.button_M.Name = "button_M";
@@ -386,6 +397,7 @@ namespace calculator
             this.button_M.TabIndex = 30;
             this.button_M.Text = "M";
             this.button_M.UseVisualStyleBackColor = true;
+            this.button_M.Click += new System.EventHandler(this.button_M_Click);
             // 
             // button_Base10
             // 
@@ -398,12 +410,25 @@ namespace calculator
             this.button_Base10.UseVisualStyleBackColor = true;
             this.button_Base10.Click += new System.EventHandler(this.button_Num_Click);
             // 
+            // listBox_Mem
+            // 
+            this.listBox_Mem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Mem.FormattingEnabled = true;
+            this.listBox_Mem.ItemHeight = 29;
+            this.listBox_Mem.Location = new System.Drawing.Point(22, 290);
+            this.listBox_Mem.Name = "listBox_Mem";
+            this.listBox_Mem.Size = new System.Drawing.Size(449, 497);
+            this.listBox_Mem.TabIndex = 32;
+            this.listBox_Mem.Visible = false;
+            this.listBox_Mem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_Mem_MouseDoubleClick);
+            // 
             // calc_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(492, 797);
+            this.Controls.Add(this.listBox_Mem);
             this.Controls.Add(this.button_Base10);
             this.Controls.Add(this.button_M);
             this.Controls.Add(this.button_MS);
@@ -441,7 +466,9 @@ namespace calculator
             this.Name = "calc_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CALCULATOR-EKSDI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.calc_Main_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.calc_Main_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,6 +507,7 @@ namespace calculator
         private System.Windows.Forms.Button button_MS;
         private System.Windows.Forms.Button button_M;
         private System.Windows.Forms.Button button_Base10;
+        public System.Windows.Forms.ListBox listBox_Mem;
     }
 }
 

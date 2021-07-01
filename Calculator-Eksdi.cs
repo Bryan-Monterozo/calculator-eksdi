@@ -22,9 +22,8 @@ namespace calculator
         //bool par_StatusR = false;
         bool par_TokenL;
         bool par_TokenR;
-        bool mem_Recall = true;
-        double memory = 0;
-
+        //double memory = 0;
+        
         public calc_Main()
         {
             InitializeComponent();
@@ -114,7 +113,6 @@ namespace calculator
             par_TokenR = false;
             point_Token = 0;
             pointEnable = true;
-            mem_Recall = true;
         }
 
         public void button_Clear_Click(object sender, EventArgs e)
@@ -141,7 +139,6 @@ namespace calculator
             operation_Status = false;
             par_TokenL = false;
             par_TokenR = false;
-            mem_Recall = true;
         }
         public void button_Operator_Click(object sender, EventArgs e)
         {
@@ -157,7 +154,6 @@ namespace calculator
             par_TokenR = false;
             pointEnable = true;
             point_Token = 0;
-            mem_Recall = true;
         }
 
         public void button_L_Par_Click(object sender, EventArgs e)
@@ -262,39 +258,129 @@ namespace calculator
         //MEMORY MANIPULATION
         private void button_MC_Click(object sender, EventArgs e)
         {
-            memory = 0;
+            listBox_Mem.Items.Clear();
+            button_M.Enabled = false;
+            button_MR.Enabled = false;
+            button_MSub.Enabled = false;
+            button_MAdd.Enabled = false;
+            button_MC.Enabled = false;
         }
 
-        private void button_MR_Click(object sender, EventArgs e)
+        public void button_MR_Click(object sender, EventArgs e)
         {
             if (text_Box_Entry.Text == "0")
             {
                 text_Box_Entry.Clear();
             }
 
-            if (mem_Recall == true)
+            if (par_TokenR == true)
             {
+                text_Box_Entry.Text = text_Box_Entry.Text + "*" + listBox_Mem.Items[0].ToString();
+                if (pointEnable == false)
+                {
+                    string s = (string)listBox_Mem.Items[0];
+                    byte n = (byte)s.Length;
+                    point_Token = (byte)(point_Token + n);
+                }
+            }
+
+            if (par_TokenR == false)
+            {
+                text_Box_Entry.Text = text_Box_Entry.Text + listBox_Mem.Items[0].ToString();
+                if (pointEnable == false)
+                {
+                    string s = (string)listBox_Mem.Items[0];
+                    byte n = (byte)s.Length;
+                    point_Token = (byte)(point_Token + n);
+                }
+            }
+
+            operation_Status = false;
+            par_TokenL = true;
+            listBox_Mem.Visible = false;
+        }
+        public void button_MS_Click(object sender, EventArgs e)
+        {
+            listBox_Mem.Items.Insert(0, text_Box_Result.Text);
+            button_MR.Enabled = true;
+            button_MSub.Enabled = true;
+            button_MAdd.Enabled = true;
+            button_M.Enabled = true;
+            button_MC.Enabled = true;
+        }
+
+        public void button_MAdd_Click(object sender, EventArgs e)
+        {
+            string recent_Val = listBox_Mem.Items[0].ToString();
+            listBox_Mem.Items[0] = (double.Parse(recent_Val) + double.Parse(text_Box_Entry.Text)).ToString();
+        }
+
+        public void button_MSub_Click(object sender, EventArgs e)
+        {
+            string recent_Val = listBox_Mem.Items[0].ToString();
+            listBox_Mem.Items[0] = (double.Parse(recent_Val) - double.Parse(text_Box_Entry.Text)).ToString();
+        }
+
+        public void button_M_Click(object sender, EventArgs e)
+        {
+            listBox_Mem.Visible = true;
+        }
+
+        private void listBox_Mem_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listBox_Mem.SelectedItem != null)
+            {
+                if (text_Box_Entry.Text == "0")
+                {
+                    text_Box_Entry.Clear();
+                }
+
                 if (par_TokenR == true)
                 {
-                    Button b = (Button)sender;
-                    text_Box_Entry.Text = text_Box_Entry.Text + "*" + memory.ToString();
+                    text_Box_Entry.Text = text_Box_Entry.Text + "*" + listBox_Mem.Text;
+                    if (pointEnable == false)
+                    {
+                        string s = (string)listBox_Mem.SelectedItem;
+                        byte n = (byte)s.Length;
+                        point_Token = (byte)(point_Token + n);
+                    }
                 }
 
                 if (par_TokenR == false)
                 {
-                    Button b = (Button)sender;
-                    text_Box_Entry.Text = text_Box_Entry.Text + memory.ToString();
+                    text_Box_Entry.Text = text_Box_Entry.Text + listBox_Mem.Text;
+                    if (pointEnable == false)
+                    {
+                        string s = (string)listBox_Mem.SelectedItem;
+                        byte n = (byte)s.Length;
+                        point_Token = (byte)(point_Token + n);
+                    }
                 }
-                if (text_Box_Entry.Text != "0")
-                {
-                    mem_Recall = false;
-                }
+
+                operation_Status = false;
+                par_TokenL = true;
+                listBox_Mem.Visible = false;
             }
         }
 
-        private void button_MS_Click(object sender, EventArgs e)
+        public void calc_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            memory = double.Parse(text_Box_Result.Text);
+            Application.Exit();
+        }
+
+        private void calc_Main_MouseClick(object sender, MouseEventArgs e)
+        {
+            listBox_Mem.Visible = false;
+        }
+
+        private void text_Box_Result_MouseClick(object sender, MouseEventArgs e)
+        {
+            listBox_Mem.Visible = false;
+        }
+
+        private void text_Box_Entry_MouseClick(object sender, MouseEventArgs e)
+        {
+            listBox_Mem.Visible = false;
         }
     }
 }
