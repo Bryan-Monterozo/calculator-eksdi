@@ -18,11 +18,8 @@ namespace calculator
         byte point_Token = 0;
         bool pointEnable = true;
         bool operation_Status;
-        //bool par_StatusL = false;
-        //bool par_StatusR = false;
         bool par_TokenL;
         bool par_TokenR;
-        //double memory = 0;
         
         public calc_Main()
         {
@@ -40,7 +37,6 @@ namespace calculator
             {
                 text_Box_Entry.Clear();
             }
-
             if (par_TokenR == true)
             {
                 Button b = (Button)sender;
@@ -50,7 +46,6 @@ namespace calculator
                     point_Token++;
                 }
             }
-            
             if (par_TokenR == false)
             {
                 Button b = (Button)sender;
@@ -60,14 +55,12 @@ namespace calculator
                     point_Token++;
                 }
             }
-            
-            //result = result + b.Text;
-
             operation_Status = false;
             par_TokenL = true;
             par_TokenR = false;
-            //par_StatusL = true;
-            //par_StatusR = false;
+            text_Box_Entry.Focus();
+            text_Box_Entry.SelectionStart = text_Box_Entry.Text.Length;
+            text_Box_Entry.SelectionLength = 0;
         }
 
         public void button_Dot_Click(object sender, EventArgs e)
@@ -78,7 +71,6 @@ namespace calculator
                 {
                     text_Box_Entry.Clear();
                 }
-
                 if (par_TokenR == true)
                 {
                     Button b = (Button)sender;
@@ -89,7 +81,6 @@ namespace calculator
                         point_Token++;
                     }
                 }
-
                 if (par_TokenR == false)
                 {
                     Button b = (Button)sender;
@@ -107,7 +98,6 @@ namespace calculator
         {
             text_Box_Entry.Text = "0";
             text_Box_Result.Text = "0";
-            //result = "0";
             operation_Status = false;
             par_TokenL = false;
             par_TokenR = false;
@@ -121,17 +111,14 @@ namespace calculator
             {
                 text_Box_Entry.Text = text_Box_Entry.Text.Remove(text_Box_Entry.Text.Length - 1, 1);
             }
-
             if (text_Box_Entry.Text == "") 
             {
                 text_Box_Entry.Text = "0";
             }
-
             if (point_Token == 1)
             {
                 pointEnable = true;
             }
-            
             if (point_Token != 0)
             {
                 point_Token--;
@@ -162,14 +149,12 @@ namespace calculator
             {
                 text_Box_Entry.Clear();
             }
-
             if (par_TokenL == false)
             {
                 Button b = (Button)sender;
                 operation = b.Text;
                 text_Box_Entry.Text = text_Box_Entry.Text + operation;
             }
-
             if (par_TokenL == true)
             {
                 Button b = (Button)sender;
@@ -177,13 +162,6 @@ namespace calculator
                 text_Box_Entry.Text = text_Box_Entry.Text + "*" + operation;
                 par_TokenL = false;
             }
-            /*if (par_StatusL == false)
-            {
-                Button b = (Button)sender;
-                operation = b.Text;
-                text_Box_Entry.Text = text_Box_Entry.Text + operation;
-                par_StatusL = true;
-            }*/
             par_TokenR = false;
         }
 
@@ -193,21 +171,11 @@ namespace calculator
             {
                 text_Box_Entry.Clear();
             }
-
             Button b = (Button)sender;
             operation = b.Text;
             text_Box_Entry.Text = text_Box_Entry.Text + operation;
-
             par_TokenL = true;
             par_TokenR = true;
-
-            /*if (par_StatusR == false)
-            {
-                Button b = (Button)sender;
-                operation = b.Text;
-                text_Box_Entry.Text = text_Box_Entry.Text + operation;
-                par_StatusR = true;
-            }*/
         }
 
         public void button_Pi_Click(object sender, EventArgs e)
@@ -220,7 +188,6 @@ namespace calculator
             {
                 text_Box_Entry.Text = text_Box_Entry.Text + "(3.14159)";
                 operation_Status = false;
-
             }
             if (par_TokenL == true)
             {
@@ -230,7 +197,7 @@ namespace calculator
             par_TokenL = true;
             par_TokenR = true;
         }
-        
+
         //For Evaluating Strings as expression
         public static Double Evaluate(string expression)
         {
@@ -240,7 +207,6 @@ namespace calculator
             DataRow row = table.NewRow();
             table.Rows.Add(row);
             return Double.Parse((string)row["expression"]);
-        
         }
         
         public void button_Equal_Click(object sender, EventArgs e)
@@ -272,7 +238,6 @@ namespace calculator
             {
                 text_Box_Entry.Clear();
             }
-
             if (par_TokenR == true)
             {
                 text_Box_Entry.Text = text_Box_Entry.Text + "*" + listBox_Mem.Items[0].ToString();
@@ -283,7 +248,6 @@ namespace calculator
                     point_Token = (byte)(point_Token + n);
                 }
             }
-
             if (par_TokenR == false)
             {
                 text_Box_Entry.Text = text_Box_Entry.Text + listBox_Mem.Items[0].ToString();
@@ -294,7 +258,6 @@ namespace calculator
                     point_Token = (byte)(point_Token + n);
                 }
             }
-
             operation_Status = false;
             par_TokenL = true;
             listBox_Mem.Visible = false;
@@ -334,7 +297,6 @@ namespace calculator
                 {
                     text_Box_Entry.Clear();
                 }
-
                 if (par_TokenR == true)
                 {
                     text_Box_Entry.Text = text_Box_Entry.Text + "*" + listBox_Mem.Text;
@@ -345,7 +307,6 @@ namespace calculator
                         point_Token = (byte)(point_Token + n);
                     }
                 }
-
                 if (par_TokenR == false)
                 {
                     text_Box_Entry.Text = text_Box_Entry.Text + listBox_Mem.Text;
@@ -356,7 +317,6 @@ namespace calculator
                         point_Token = (byte)(point_Token + n);
                     }
                 }
-
                 operation_Status = false;
                 par_TokenL = true;
                 listBox_Mem.Visible = false;
