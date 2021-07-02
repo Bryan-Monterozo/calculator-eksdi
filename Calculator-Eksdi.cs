@@ -33,7 +33,6 @@ namespace calculator
         {
 
         }
-
         //buttons
         public void button_Num_Click(object sender, EventArgs e)
         {
@@ -66,6 +65,7 @@ namespace calculator
 
             operation_Status = false;
             par_TokenL = true;
+            par_TokenR = false;
             //par_StatusL = true;
             //par_StatusR = false;
         }
@@ -326,7 +326,7 @@ namespace calculator
             listBox_Mem.Visible = true;
         }
 
-        private void listBox_Mem_MouseDoubleClick(object sender, MouseEventArgs e)
+        public void listBox_Mem_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listBox_Mem.SelectedItem != null)
             {
@@ -368,19 +368,112 @@ namespace calculator
             Application.Exit();
         }
 
-        private void calc_Main_MouseClick(object sender, MouseEventArgs e)
+        public void calc_Main_MouseClick(object sender, MouseEventArgs e)
         {
             listBox_Mem.Visible = false;
         }
 
-        private void text_Box_Result_MouseClick(object sender, MouseEventArgs e)
+        public void text_Box_Result_MouseClick(object sender, MouseEventArgs e)
         {
             listBox_Mem.Visible = false;
         }
 
-        private void text_Box_Entry_MouseClick(object sender, MouseEventArgs e)
+        public void text_Box_Entry_MouseClick(object sender, MouseEventArgs e)
         {
             listBox_Mem.Visible = false;
+        }
+
+        //KeyBinds
+        private void calc_Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D1)
+            {
+                button1.PerformClick();
+            }
+            if (e.KeyCode == Keys.D2)
+            {
+                button2.PerformClick();
+            }
+            if (e.KeyCode == Keys.D3)
+            {
+                button3.PerformClick();
+            }
+            if (e.KeyCode == Keys.D4)
+            {
+                button4.PerformClick();
+            }
+            if (e.KeyCode == Keys.D5 && e.Modifiers != Keys.Shift)
+            {
+                button5.PerformClick();
+            }
+            if (e.KeyCode == Keys.D6 && e.Modifiers != Keys.Shift)
+            {
+                button6.PerformClick();
+            }
+            if (e.KeyCode == Keys.D7)
+            {
+                button7.PerformClick();
+            }
+            if (e.KeyCode == Keys.D8)
+            {
+                button8.PerformClick();
+            }
+            if (e.KeyCode == Keys.D9 && e.Modifiers != Keys.Shift)
+            {
+                button9.PerformClick();
+            }
+            if (e.KeyCode == Keys.D0 && e.Modifiers != Keys.Shift)
+            {
+                button0.PerformClick();
+            }
+            if (e.KeyCode == Keys.OemPeriod)
+            {
+                button_Dot.PerformClick();
+            }
+            if (e.KeyCode == Keys.Oemplus && e.Modifiers == Keys.Shift)
+            {
+                button_Add.PerformClick();
+            }
+            if (e.KeyCode == Keys.OemMinus)
+            {
+                button_Subtract.PerformClick();
+            }
+            if (e.KeyCode == Keys.D6 && e.Modifiers == Keys.Shift)
+            {
+                button_Multiply.PerformClick();
+            }
+            if (e.KeyCode == Keys.OemQuestion)
+            {
+                button_Divide.PerformClick();
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                button_Equal.PerformClick();
+            }
+            if (e.KeyCode == Keys.Back)
+            {
+                button_Clear.PerformClick();
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                button_Clear_All.PerformClick();
+            }
+            if (e.KeyCode == Keys.D5 && e.Modifiers == Keys.Shift)
+            {
+                button_Mod.PerformClick();
+            }
+            if (e.KeyCode == Keys.D9 && e.Modifiers == Keys.Shift)
+            {
+                button_L_Par.PerformClick();
+            }
+            if (e.KeyCode == Keys.D0 && e.Modifiers == Keys.Shift)
+            {
+                button_R_Par.PerformClick();
+            }
+            if (e.KeyCode == Keys.E)
+            {
+                button_Base10.PerformClick();
+            }
         }
     }
 }

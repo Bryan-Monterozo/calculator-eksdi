@@ -52,7 +52,7 @@ namespace calculator
             this.button_L_Par = new System.Windows.Forms.Button();
             this.button_R_Par = new System.Windows.Forms.Button();
             this.button_Pi = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button_Mod = new System.Windows.Forms.Button();
             this.button_MC = new System.Windows.Forms.Button();
             this.button_MR = new System.Windows.Forms.Button();
             this.button_MAdd = new System.Windows.Forms.Button();
@@ -252,6 +252,7 @@ namespace calculator
             // 
             // text_Box_Entry
             // 
+            this.text_Box_Entry.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_Box_Entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_Box_Entry.Location = new System.Drawing.Point(22, 147);
             this.text_Box_Entry.Name = "text_Box_Entry";
@@ -317,16 +318,16 @@ namespace calculator
             this.button_Pi.UseVisualStyleBackColor = true;
             this.button_Pi.Click += new System.EventHandler(this.button_Pi_Click);
             // 
-            // button10
+            // button_Mod
             // 
-            this.button10.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(295, 336);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(85, 85);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "%";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button_Operator_Click);
+            this.button_Mod.Font = new System.Drawing.Font("Segoe UI Black", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Mod.Location = new System.Drawing.Point(295, 336);
+            this.button_Mod.Name = "button_Mod";
+            this.button_Mod.Size = new System.Drawing.Size(85, 85);
+            this.button_Mod.TabIndex = 24;
+            this.button_Mod.Text = "%";
+            this.button_Mod.UseVisualStyleBackColor = true;
+            this.button_Mod.Click += new System.EventHandler(this.button_Operator_Click);
             // 
             // button_MC
             // 
@@ -436,7 +437,7 @@ namespace calculator
             this.Controls.Add(this.button_MAdd);
             this.Controls.Add(this.button_MR);
             this.Controls.Add(this.button_MC);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button_Mod);
             this.Controls.Add(this.button_Pi);
             this.Controls.Add(this.button_R_Par);
             this.Controls.Add(this.button_L_Par);
@@ -460,6 +461,7 @@ namespace calculator
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(510, 844);
             this.MinimumSize = new System.Drawing.Size(510, 844);
@@ -468,6 +470,7 @@ namespace calculator
             this.Text = "CALCULATOR-EKSDI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.calc_Main_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.calc_Main_KeyDown);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.calc_Main_MouseClick);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -499,7 +502,7 @@ namespace calculator
         private System.Windows.Forms.Button button_L_Par;
         private System.Windows.Forms.Button button_R_Par;
         private System.Windows.Forms.Button button_Pi;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button_Mod;
         private System.Windows.Forms.Button button_MC;
         private System.Windows.Forms.Button button_MR;
         private System.Windows.Forms.Button button_MAdd;
